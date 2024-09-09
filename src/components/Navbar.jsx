@@ -60,20 +60,21 @@ function Navbar() {
             id="navbar-cta"
           >
             {isMenuOpen ? (
-              <ul className="flex flex-col gap-5 font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-      <HashLink to="#aboutus" scroll={smoothScroll}>
+              <ul className="flex flex-col  font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+       <HashLink to="#" className=" pb-3">الرئيسية</HashLink>
+              <HashLink to="#aboutus" className=" pb-3" scroll={smoothScroll} >
                 من نحن
               </HashLink>
-              <HashLink to="#pricePlan" scroll={smoothScroll}>
+              <HashLink to="#pricePlan" className=" pb-3" scroll={smoothScroll}>
                 أسعارنا
               </HashLink>
-              <HashLink to="#service" scroll={smoothScroll}>
+              <HashLink to="#service" className=" pb-3" scroll={smoothScroll}>
                 خدماتنا
               </HashLink>
-              <HashLink to="#usage" scroll={smoothScroll}>
+              <HashLink to="#usage"  className=" pb-3" scroll={smoothScroll}>
                 السياسة والاستخدام
               </HashLink>
-              <HashLink to="#contactus" scroll={smoothScroll}>
+              <HashLink to="#contactus" className=" pb-3" scroll={smoothScroll}>
                 تواصل معنا
               </HashLink>
               </ul>
