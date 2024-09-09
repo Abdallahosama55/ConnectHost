@@ -7,7 +7,7 @@ import { servicesSection } from "../utils/constant";
 
 const OurServices = () => {
   return (
-    <div className="font-cairo lg:mx-16 mx-5" dir="rtl">
+    <div className="font-cairo lg:mx-16 mx-5" id="service" dir="rtl">
       <Header title="خدماتنا" />
 
       <div className=" flex lg:flex-row flex-col justify-between">

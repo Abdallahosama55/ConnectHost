@@ -5,7 +5,7 @@ import { plans } from "../utils/constant";
 
 function HomePrice() {
   return (
-    <div className="lg:mx-32 mx-5 flex flex-col gap-6 font-cairo" dir="rtl">
+    <div className="lg:mx-32 mx-5 flex flex-col gap-6 font-cairo" id="pricePlan" dir="rtl">
       <div className=" py-6">
         <Header title={"أسعارنا"} />
       </div>

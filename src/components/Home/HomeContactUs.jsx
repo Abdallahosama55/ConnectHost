@@ -46,7 +46,7 @@ function HomeContactUs() {
   });
 
   return (
-    <div className="font-cairo py-6 lg:mx-24">
+    <div className="font-cairo py-6 lg:mx-24" id="contactus">
       {/* Toast Container to display notifications */}
       <ToastContainer />
 

@@ -11,7 +11,7 @@ function HomeFAQ() {
 
 
   return (
-    <div className="lg:mx-32 font-cairo " dir="rtl">
+    <div className="lg:mx-32 font-cairo " id="usage" dir="rtl">
       <div className=" pt-4">
         <Header title="السياسة والأحكام" />
       </div>

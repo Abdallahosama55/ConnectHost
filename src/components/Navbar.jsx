@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { HiMenuAlt1, HiX } from "react-icons/hi";
 import Logo from '../assets/Logo.png';
+import { HashLink } from "react-router-hash-link";
 
-// Reusable Button Component
 const Button = ({ onClick, children }) => (
   <button
     type="button"
@@ -13,7 +13,6 @@ const Button = ({ onClick, children }) => (
   </button>
 );
 
-// Reusable MenuItem Component
 const MenuItem = ({ href, children }) => (
   <li>
     <a
@@ -30,6 +29,10 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const smoothScroll = (el) => {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <div dir="rtl" className="font-cairo overflow-x-hidden">
@@ -56,22 +59,36 @@ function Navbar() {
             className={`absolute top-16 left-0 w-full md:static md:w-auto md:top-auto md:left-auto transition-transform duration-300 ease-in-out transform ${isMenuOpen ? "translate-x-0" : "translate-x-full w-0 h-0"} md:translate-x-0 items-center justify-between md:flex md:items-center md:space-x-8`}
             id="navbar-cta"
           >
-        {isMenuOpen?    <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <MenuItem href="#">الرئيسية</MenuItem>
-              <MenuItem href="#">من نحن</MenuItem>
-              <MenuItem href="#">أسعارنا</MenuItem>
-              <MenuItem href="#">خدماتنا</MenuItem>
-              <MenuItem href="#">السياسة والاستخدام</MenuItem>
-              <MenuItem href="#">تواصل معنا</MenuItem>
-            </ul>:""}
+            {isMenuOpen ? (
+              <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <MenuItem href="#">الرئيسية</MenuItem>
+                <MenuItem href="#">من نحن</MenuItem>
+                <MenuItem href="#">أسعارنا</MenuItem>
+                <MenuItem href="#">خدماتنا</MenuItem>
+                <MenuItem href="#">السياسة والاستخدام</MenuItem>
+                <MenuItem href="#">تواصل معنا</MenuItem>
+              </ul>
+            ) : (
+              ""
+            )}
 
-             <ul className=" flex-col lg:flex hidden font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex-col lg:flex hidden font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <MenuItem href="#">الرئيسية</MenuItem>
-              <MenuItem href="#">من نحن</MenuItem>
-              <MenuItem href="#">أسعارنا</MenuItem>
-              <MenuItem href="#">خدماتنا</MenuItem>
-              <MenuItem href="#">السياسة والاستخدام</MenuItem>
-              <MenuItem href="#">تواصل معنا</MenuItem>
+              <HashLink to="#aboutus" scroll={smoothScroll}>
+                من نحن
+              </HashLink>
+              <HashLink to="#pricePlan" scroll={smoothScroll}>
+                أسعارنا
+              </HashLink>
+              <HashLink to="#service" scroll={smoothScroll}>
+                خدماتنا
+              </HashLink>
+              <HashLink to="#usage" scroll={smoothScroll}>
+                السياسة والاستخدام
+              </HashLink>
+              <HashLink to="#contactus" scroll={smoothScroll}>
+                تواصل معنا
+              </HashLink>
             </ul>
           </div>
         </div>
